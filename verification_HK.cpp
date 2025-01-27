@@ -1,57 +1,97 @@
 
 
-#include "verification_HK.hpp" //on inclut ce qu'il y a dans hpp ici  
+#include "verification_HK.hpp" //include what's in hpp here  
 
+//using namespace std; I prefer not to use it so as not to create a name conflict
 
 //Procedure
 void verification_HK:: new_project_fasta(){
- std::cout<<"Hello Hermine. let's analyse a new fasta file "<<std::endl; // like print (affichage)
+ std::cout<<"Hello Hermine. let's analyse a new fasta file "<<std::endl; // like print.
  }
+
+
+//Procedure to put the file in a good repertory
+void verification_HK::fasta_repertory() {
+    std::string folder_name = "fasta_files"; //variable with the name of repertory
+
+    if (!std::filesystem::exists(folder_name)) { //make sure the repertory exists 
+        std::cerr << "The folder 'fasta_files' doesn't exist. Creating it now. Please put your file in this folder." << std::endl;
+        std::filesystem::create_directory(folder_name); //creation of repertory
+    } else {
+        std::cout << "The folder 'fasta_files' exists. Please put your file in this folder." << std::endl;
+    }
+}
 
 //function , enter name fasta
 std::string verification_HK:: enter_name_fasta(){
-    std::cout <<"Please give the name of the fasta file with extention "<<std::endl;
+    std::cout <<"Please enter the name of the file with (it must be in 'fasta_files'): "<<std::endl;
     std::string name_fasta; //create a variable to put the name fasta file 
     std::cin>>name_fasta; //asks the user to enter the name of the file and "">>"" shows where to enter the string (name). 
-    return name_fasta; 
+    std::string full_path = "fasta_files/" + name_fasta; // Automatically adds the path to the fasta_files/ folder
+    //std::cout << "The complete path used :" << full_path << std::endl;
+    return full_path; //Returns the variable containing the file/
+}
 
+//Function that check if the file exists
+bool verification_HK:: exists_fasta(const std::string &file_path){ //The const guarantees that the object will not be modified and the & is used to pass the object by reference.
+    return std::filesystem::exists(file_path);//checks if the file exists
+        
 }
 
 //Function that check if the file is a fasta file(extention .fasta, .fas, .fastq)
-bool verification_HK:: extention_fasta(std::string name_fasta){ //
+bool verification_HK:: extention_fasta(std::string name_fasta){ //parameter a variable containing the name of the file
     bool correct_extention = true; //
-    if (!(name_fasta.ends_with(".fasta") or name_fasta.ends_with(".fas") or name_fasta.ends_with(".fastq"))){ //
-        std::cerr << "Error: This is not a valid FASTA file. Please enter a file with .fasta, .fas, or .fastq extension: " << std::endl; //
-        correct_extention = false; //
+    if (!(name_fasta.ends_with(".fasta") or name_fasta.ends_with(".fas") or name_fasta.ends_with(".fastq"))){ //checks if the extension is correct
+        std::cerr << "Error: the file extension must be .fasta, .fa or .fastq." << std::endl; 
+        correct_extention = false; //if it's not the right extension, the boolean variable is set to false
     }
-    return correct_extention; //
+    return correct_extention; 
 }
 
-bool verification_HK:: fasta_empty(std::string name_file){
-    std::ifstream file(name_file); //ifstream permet d'ouvrir un fichier et de stocker ce qu'il y a l'intérieur dans une variable 
-    return file.peek() == EOF; //peek() est une méthode qui ermet de regarder le caractère suivant dans le fichier sans le consommer.peek() renvoie alors la constante EOF (End of File, fin du fichier
-    
-}
-//demande toute les vérifications 
+//Function that check if th file is empty. 
+bool verification_HK::fasta_empty(const std::string &name_file) {
+    std::ifstream file(name_file); // ifstream is used to open a file and store its content.
 
+    if (!file.is_open()) { // Check if the file has been successfully opened.
+        std::cerr << "Error: Unable to open the file " << name_file << std::endl;
+        return true; // If the file cannot be opened, consider it empty.
+    }
+
+    return file.peek() == EOF; // The peek() method checks the next character without consuming it. If it returns EOF (End Of File), the file is empty.
+}
+
+
+//request all checks 
 std::string verification_HK::all_verifications(){
-    bool condition_verif; //création d'unvariable booléenne 
-    condition_verif = false; //cette variable est false de base
-    std::string name_fasta = "vide"; 
-    while (!condition_verif){ //Tant cette variable reste fausse (donc la condition reste fausse)
-        std::string name_fasta = enter_name_fasta(); //création d'une variable qui stocke le nom du document à partir de la fontion enter_name_fasta
-        if (!extention_fasta(name_fasta)){ //
-            continue; //permet de reprendre le while(pas arrêté le programme jusqu'à avoir le bon). Il sort du il et reprend la boucle
+    fasta_repertory(); //Checks or creates the ‘fasta_files’ folder.
+
+    bool condition_verif; //creating a Boolean variable.
+    condition_verif = false; //this variable is basic false.
+    std::string name_fasta = "empty"; //create a variable with ‘empty’ in it.
+
+    while (!condition_verif){ //As long as !condition_verif is true (i.e. condition_verif is false).
+
+        std::string name_fasta = enter_name_fasta(); //This variable stores the name of the document from the enter_name_fasta function.
+
+        if (!exists_fasta(name_fasta)) {
+            std::cerr << "Error: The file does not exist in 'fasta_files'. Please try again." << std::endl;
+            continue; //Allows you to resume the while (not stopping the program until you have the right one). It exits the if and resumes the loop.
+        }
+
+        if (!extention_fasta(name_fasta)){ 
+            continue; 
 
         }
         if (fasta_empty(name_fasta)){
-            std::cerr<<"Error : The file faste is empty"<<std::endl;
+            std::cerr << "Error: The file is empty." << std::endl;
             continue;
         }
     
-
+        // If all checks pass.
+        condition_verif = true; //Exit the loop.
     }
+    
     return name_fasta; 
 }
 
-//Function that check if if the fasta is complete
+
