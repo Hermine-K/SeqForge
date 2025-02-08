@@ -27,8 +27,8 @@ std::string verification_HK:: enter_name_fasta(){
     std::cout <<"Please enter the name of the file with (it must be in 'fasta_files'): "<<std::endl;
     std::string name_fasta; //create a variable to put the name fasta file 
     std::cin>>name_fasta; //asks the user to enter the name of the file and "">>"" shows where to enter the string (name). 
-    std::string full_path = "fasta_files/" + name_fasta; // Automatically adds the path to the fasta_files/ folder
-    //std::cout << "The complete path used :" << full_path << std::endl;
+    std::string full_path = "./fasta_files/" + name_fasta; // Automatically adds the path to the fasta_files/ folder
+    std::cout << "The complete path used :" << full_path << std::endl;
     return full_path; //Returns the variable containing the file/
 }
 
@@ -60,7 +60,17 @@ bool verification_HK::fasta_empty(const std::string &name_file) {
     return file.peek() == EOF; // The peek() method checks the next character without consuming it. If it returns EOF (End Of File), the file is empty.
 }
 
-
+//function that check fasta 
+std::string verification_HK:: what_is_my_file(std::string name_fasta){
+    if (name_fasta.ends_with(".fasta") or name_fasta.ends_with(".fa")){
+        return "FASTA";
+    }
+    
+    if (name_fasta.ends_with(".fastq")){
+        return "FASTQ";
+    }
+return "NONE";
+}
 //request all checks 
 std::string verification_HK::all_verifications(){
     fasta_repertory(); //Checks or creates the ‘fasta_files’ folder.
@@ -71,7 +81,7 @@ std::string verification_HK::all_verifications(){
 
     while (!condition_verif){ //As long as !condition_verif is true (i.e. condition_verif is false).
 
-        std::string name_fasta = enter_name_fasta(); //This variable stores the name of the document from the enter_name_fasta function.
+        name_fasta = enter_name_fasta(); //This variable stores the name of the document from the enter_name_fasta function.
 
         if (!exists_fasta(name_fasta)) {
             std::cerr << "Error: The file does not exist in 'fasta_files'. Please try again." << std::endl;
@@ -86,12 +96,15 @@ std::string verification_HK::all_verifications(){
             std::cerr << "Error: The file is empty." << std::endl;
             continue;
         }
+        
     
         // If all checks pass.
-        condition_verif = true; //Exit the loop.
+        //condition_verif = true; 
+        break;//Exit the loop.
     }
     
     return name_fasta; 
 }
 
+//faire une fonction vérification 2 qui prend en paramètre le nom du fichier et qui n'utilise pas enter_name_fasta
 

@@ -17,6 +17,7 @@ class verification_HK{
         bool extention_fasta(std::string name_fasta); 
         std::string all_verifications(); 
         bool fasta_empty (const std::string &name_file); 
+        std::string what_is_my_file(std::string name_fasta); 
        
 } ; 
 
