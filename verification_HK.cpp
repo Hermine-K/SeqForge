@@ -108,3 +108,28 @@ std::string verification_HK::all_verifications(){
 
 //faire une fonction vérification 2 qui prend en paramètre le nom du fichier et qui n'utilise pas enter_name_fasta
 
+int verification_HK::all_verifications_know_file(std::string name_file){
+    fasta_repertory(); //Checks or creates the ‘fasta_files’ folder.
+    if (!exists_fasta(name_file)) {
+        std::cerr << "Error: The file does not exist in 'fasta_files'. Please try again." << std::endl;
+        return -1; //Allows you to resume the while (not stopping the program until you have the right one). It exits the if and resumes the loop.
+    }
+
+    if (!extention_fasta(name_file)){ 
+        std::cerr << "Error: The file name must have the extention fasta, fastq, fa" << std::endl;
+        return -1; 
+
+    }
+    if (fasta_empty(name_file)){
+        std::cerr << "Error: The file is empty." << std::endl;
+        return -1;
+    }
+    
+    return 0; 
+}
+
+
+
+    
+
+

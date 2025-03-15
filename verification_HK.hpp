@@ -18,6 +18,7 @@ class verification_HK{
         std::string all_verifications(); 
         bool fasta_empty (const std::string &name_file); 
         std::string what_is_my_file(std::string name_fasta); 
+        int all_verifications_know_file(std::string name_file);
        
 } ; 
 
