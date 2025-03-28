@@ -6,6 +6,7 @@
 #include<iostream>
 #include<fstream>
 #include<filesystem>
+#include <vector>
 
 
 class verification_HK{
@@ -19,6 +20,16 @@ class verification_HK{
         bool fasta_empty (const std::string &name_file); 
         std::string what_is_my_file(std::string name_fasta); 
         int all_verifications_know_file(std::string name_file);
+
+        //Fonctions d'héritage pour fasta et fastq
+        
+        std::string validate_sequence(const std::string &line);  // Vérifie les séquences
+        std::vector<std::string> heads; 
+        std::vector<std::string> sequences;
+        std::vector<std::string> quality;
+        void set_heads(std::string H); 
+        void set_sequences(std::string S); 
+        void set_quality(std::string Q); 
        
 } ; 
 

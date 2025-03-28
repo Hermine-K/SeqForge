@@ -129,6 +129,39 @@ int verification_HK::all_verifications_know_file(std::string name_file){
 }
 
 
+//Function that checks the sequence.
+
+std::string verification_HK::validate_sequence(const std::string &line) {
+    const std::string iupac = "ACGTNRYWSKMBDHV-.acgtnrywskmbdhv-."; // List of valid IUPAC characters.
+    std::string good_line;
+    // Scrolls through each character on the line.
+    for (std::size_t i = 0; i < line.size(); i++) {
+       // Checks if the character is not in the IUPAC list.
+        if (iupac.find(line[i]) == std::string::npos) {
+            std::cerr<<"Error: character "<< line[i] << "found at position"<< i + 1<< "in the sequence :"<< line<< std::endl;   
+            good_line.append("-"); 
+        } 
+        else { 
+            good_line.push_back(line[i]); 
+
+        } 
+
+    }
+    return good_line; 
+}
+
+void verification_HK::set_heads(std::string H){
+    heads.push_back(H);
+}
+
+void verification_HK::set_sequences(std::string seq){
+    sequences.push_back(seq);
+}
+
+void verification_HK::set_quality(std::string Q){
+    quality.push_back(Q);
+}
+
 
     
 

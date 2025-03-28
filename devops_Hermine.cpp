@@ -1,13 +1,17 @@
 //#include<iostream
 #include "verification_HK.hpp"
 #include "verification_FASTA.hpp"
+#include "verification_FASTQ.hpp"
+#include "userPrompt.hpp"
+#include "Analyse_HK.hpp"
 
 
 int main(int argc, char *argv[]) {
 
    verification_HK verif; 
    verification_FASTA verif_f; 
-   //verification_FASTQ verif_q; 
+   verification_FASTQ verif_q; 
+   Analyse_HK an; 
    verif.new_project_fasta();
    if (argc <= 1){
       std::string name_file = verif.all_verifications();
@@ -17,11 +21,13 @@ int main(int argc, char *argv[]) {
       if (type_of_file== "FASTA"){
          std::cout<<"Start parsing fasta file"<<std::endl;
          verif_f.read_fasta(name_file);
-      }
-      //if (type_of_file== "FASTQ"){
+         an.analyse();
 
-      //veriif_q.lire_file(name_file);
-      //}
+      }else if (type_of_file== "FASTQ"){
+         std::cout<<"Start parsing fastq file"<<std::endl;
+         verif_q.read_fastq(name_file);
+         an.analyse();
+      }
 
 
    }else if(argc == 2){
@@ -34,18 +40,18 @@ int main(int argc, char *argv[]) {
          if (type_of_file== "FASTA"){
             std::cout<<"Start parsing fasta file"<<std::endl;
             verif_f.read_fasta(name_file);
-      }
-      //if (type_of_file== "FASTQ"){
-
-      //veriif_q.lire_file(name_file);
-      //}
+            an.analyse();
+            
+         }else if (type_of_file== "FASTQ"){
+            std::cout<<"Start parsing fastq file"<<std::endl;
+            verif_q.read_fastq(name_file);
+            an.analyse();
+         }
 
       }
       
 
    }
-   
-   
    return 0;// always put it at the end
 }
 

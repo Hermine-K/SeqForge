@@ -2,32 +2,6 @@
 
 #include "verification_FASTA.hpp"
 
-//Function that checks the header. 
-bool verification_FASTA:: validate_headers(const std::string &line){
-    return !line.empty() && (line[0]== '>' || line[0]== ';'); //Returns the line variable if it is not empty and begins with either ‘>’ or ‘;’.
-}
-
-//Function that checks the sequence.
-
-std::string verification_FASTA::validate_sequence(const std::string &line) {
-    const std::string iupac = "ACGTNRYWSKMBDHV-.acgtnrywskmbdhv-."; // List of valid IUPAC characters.
-    std::string good_line;
-    // Scrolls through each character on the line.
-    for (std::size_t i = 0; i < line.size(); i++) {
-       // Checks if the character is not in the IUPAC list.
-        if (iupac.find(line[i]) == std::string::npos) {
-            std::cerr<<"Error: character "<< line[i] << "found at position"<< i + 1<< "in the sequence :"<< line<< std::endl;   
-            good_line.append("-"); 
-        } 
-        else { 
-            good_line.push_back(line[i]); 
-
-        } 
-
-    }
-    return good_line; 
-}
-
 
 void verification_FASTA::read_fasta(std::string name_fasta){
     std::ifstream file(name_fasta); // ifstream is used to open a file and store its content.
@@ -80,10 +54,3 @@ void verification_FASTA::read_fasta(std::string name_fasta){
 
 
 
-void verification_FASTA::set_heads(std::string H){
-    heads.push_back(H);
-}
-
-void verification_FASTA::set_sequences(std::string seq){
-    sequences.push_back(seq);
-}
