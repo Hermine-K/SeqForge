@@ -52,8 +52,19 @@ void Analyse_HK::analyse(){
         user.display_common_options;
         option = user.ask_user_choice;
         
-        if(option == "-countseq"){
+        if(options == "-countseq"){
             countseq(); 
+
+        }else if(options == "-length <index>"){
+            length(); 
+
+        }else if(options == "-headers"){
+            show_headers(); 
+            
+        }else if(options == "-sequence <index>"){
+            show_sequences(); 
+        }else if(options == "-total_length "){
+            total_lenght(); 
         }
     }
 
