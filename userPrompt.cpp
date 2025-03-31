@@ -45,7 +45,7 @@ void userPrompt::display_fastq_menu() {
     display_fastq_only_options();
 }
 
-std::string ask_user_choice() {
+std::string userPrompt::ask_user_choice(){
     std::string choice;
     std::cout << "\n Enter your option: ";
     std::cin>>choice; 
@@ -53,5 +53,9 @@ std::string ask_user_choice() {
     return choice; 
     
 }
+
+
+
+
 
 

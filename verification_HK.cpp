@@ -102,7 +102,6 @@ std::string verification_HK::all_verifications(){
         //condition_verif = true; 
         break;//Exit the loop.
     }
-    
     return name_fasta; 
 }
 
@@ -123,8 +122,7 @@ int verification_HK::all_verifications_know_file(std::string name_file){
     if (fasta_empty(name_file)){
         std::cerr << "Error: The file is empty." << std::endl;
         return -1;
-    }
-    
+    } 
     return 0; 
 }
 

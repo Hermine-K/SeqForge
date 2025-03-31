@@ -18,9 +18,9 @@ void verification_FASTA::read_fasta(std::string name_fasta){
                             new_seq = false; 
                             std:: string H; //stocke l'entête. 
                             getline(file, H); //lit toute la ligne et même le dernier caratère et va à la ligne puis reste à la nouvelle ligne.
-                            std::cout<<"on récupère l'entête "<<H<<std::endl; 
+                            //std::cout<<"on récupère l'entête "<<H<<std::endl; 
                             set_heads(H); //ajouter l'entête à la liste head(vecteur)
-                            std::cout<<"finish adding line to the header"<< std::endl;   
+                            //std::cout<<"finish adding line to the header"<< std::endl;   
                         } 
 
                     }
