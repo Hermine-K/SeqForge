@@ -11,24 +11,21 @@ void verification_FASTQ::read_fastq(std::string name_fastq){
         std::string seq = "";
         std::string quality = ""; 
 
-        while(file){ //Tant que le fichier est ouvert. 
-            int car = file.peek(); //int car même si c'est un caratère, on stocke le code ascii. Si Par exemple on veut vérifier qu'on a des lettres on a sont code directe. les caratères visibles débute par 32 donc si on est sur un caratère visible (!; A; b; etc) on est donc dans le code asci
-            if (car != -1){ //vérifie qu'on est pas à la fin du doc avec le numéro ascii. 
-                if (new_seq) { //vérifie si on est dans une seq
-                    if (car > 32){ //verifie si le numéro ascii est supérieur à 32. > 32 caratère de ponctuation
-                        if (car == '@'){ //vérifie si c'est l'entête.
+        while(file){ //As long as the file is open.
+            int car = file.peek(); //int because even if it's a character, we store the ascii code. If, for example, we want to check that we have letters, we have direct code. visible characters start with 32, so if we are on a visible character (!; A; b; etc) we are in ascii code.
+            if (car != -1){ //check that we're not at the end of the doc with the ascii number.
+                if (new_seq) { //check if you are in a seq
+                    if (car > 32){ //checks whether the ascii number is greater than 32. > 32 punctuation character
+                        if (car == '@'){ //check if this is the header.
                             new_seq = false; 
-                            std:: string H; //stocke l'entête. 
-                            getline(file, H); //lit toute la ligne et même le dernier caratère et va à la ligne puis reste à la nouvelle ligne.
-                            //std::cout<<"on récupère l'entête "<<H<<std::endl; 
-                            set_heads(H); //ajouter l'entête à la liste head(vecteur)
-                            //std::cout<<"finish adding line to the header"<< std::endl;   
+                            std:: string H; //stocke the header.
+                            getline(file, H); //reads the whole line, even the last character, and goes to the next line, then stays on the new line.
+                            set_heads(H); //add the header to the list head(vector)  
                         } 
                     }
                 }else{
                     if (car == '@'){ 
-                        set_quality(quality); // pour vérifier que ce n'est pas une entête donc pourvoir faire le else 
-                        //std::cout<<"finish adding the sequence "<<seq<<std::endl;
+                        set_quality(quality); // to check that it's not a header, so you can do the else
                         quality = "";
                         new_quality = false;   
                         new_seq = true;
@@ -37,20 +34,19 @@ void verification_FASTQ::read_fastq(std::string name_fastq){
                         if(car == '+'){
                            set_sequences(seq);
                            seq = ""; 
-                           std:: string o; //permet de sauter une ligne, comme ça dès qu'on sort du if on va a la ligne suivante.
+                           std:: string o; //allows you to skip a line, so that as soon as you exit the if, you go to the next line.
                            getline(file, o);
                            new_quality = true; 
                         }  
                         if(new_quality){
-                            std:: string Q; //stocke la ligne de qualité. 
-                            getline(file, Q); //lit toute la ligne et même le dernier caratère et va à la ligne puis reste à la nouvelle ligne.
-                            quality+=Q; //fait le filtre et les warning
-                        //std::cout<<"add sequence "<<S<<std::endl;  
+                            std:: string Q; //stocke the quality line.
+                            getline(file, Q); //reads the whole line, even the last character, and goes to the next line, then stays on the new line.
+                            quality+=Q; //does the filter and warnings
+                  
                         }else{
-                            std:: string S; //stocke la ligne de sequence. 
-                            getline(file, S); //lit toute la ligne et même le dernier caratère et va à la ligne puis reste à la nouvelle ligne.
-                            seq+=validate_sequence(S); //fait le filtre et les warning
-                           //std::cout<<"add sequence "<<S<<std::endl;  
+                            std:: string S; //stocke the sequence line.
+                            getline(file, S); //reads the whole line, even the last character, and goes to the next line, then stays on the new line.
+                            seq+=validate_sequence(S); //does the filter and warnings
                         } 
                     }
                 } 
@@ -59,7 +55,6 @@ void verification_FASTQ::read_fastq(std::string name_fastq){
         }
     set_quality(quality);
     file.close();
-    //std::cout<<"finish adding the sequence"<<seq<<std::endl;  
 
     }
 }

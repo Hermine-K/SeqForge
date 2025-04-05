@@ -109,7 +109,7 @@ class verification_HK{
 
         void set_quality(std::string Q); 
        
-} ; 
+}; 
 
 #endif // VERIFICATION_HK_HPP
 

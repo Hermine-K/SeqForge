@@ -105,8 +105,7 @@ std::string verification_HK::all_verifications(){
     return name_fasta; 
 }
 
-//faire une fonction vérification 2 qui prend en paramètre le nom du fichier et qui n'utilise pas enter_name_fasta
-
+//function: check 2 which takes the file name as a parameter and does not use enter_name_fasta
 int verification_HK::all_verifications_know_file(std::string name_file){
     fasta_repertory(); //Checks or creates the ‘fasta_files’ folder.
     if (!exists_fasta(name_file)) {
