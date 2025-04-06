@@ -17,13 +17,13 @@ void Analyse_HK::display_menu(fileType type) {
     user.display_options();  // Affiche le menu unique
 
     if (type == fileType::FASTQ) {
-        std::cout<<"\n╭────────────────────────────── Options spécifiques FASTQ ──────────────────╮" << std::endl;
-        std::cout << "| -quality_score   : Affiche les scores de qualité pour une séquence        |\n" << std::endl;
-        std::cout << "| -all_fastq       : Affiche tout le contenu du fichier FASTQ               |\n" << std::endl;
+        std::cout<<"\n╭────────────────────────────── FASTQ specific options──────────────────────╮" << std::endl;
+        std::cout << "| -quality_score   : Displays the quality scores for a sequence             |\n" << std::endl;
+        std::cout << "| -all_fastq       :  Displays the entire contents of the FASTQ file        |\n" << std::endl;
         std::cout << "╰───────────────────────────────────────────────────────────────────────────╯\n" << std::endl;
     } else if (type == fileType::FASTA) {
-        std::cout<<"\n╭────────────────────────────── Options spécifiques FASTA ──────────────────╮" << std::endl;
-        std::cout << "| -all_fasta       : Affiche tout le contenu du fichier FASTA               |\n" << std::endl;
+        std::cout<<"\n╭────────────────────────────── Specific FASTA options ─────────────────────╮" << std::endl;
+        std::cout << "| -all_fasta       : Displays the entire contents of the FASTA file         |\n" << std::endl;
         std::cout << "╰───────────────────────────────────────────────────────────────────────────╯\n" << std::endl;
     }
 }
