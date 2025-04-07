@@ -133,12 +133,14 @@ std::string verification_HK::validate_sequence(const std::string &line) {
     std::string good_line;
     // Scrolls through each character on the line.
     for (std::size_t i = 0; i < line.size(); i++) {
-       // Checks if the character is not in the IUPAC list.
-        if (iupac.find(line[i]) == std::string::npos) {
-            std::cerr<<"Error: character "<< line[i] << "found at position"<< i + 1<< "in the sequence :"<< line<< std::endl;   
-            good_line.append("-"); 
-        } 
-        else { 
+        char c = line[i]; 
+       // Checks if the character is not in the IUPAC list or is not in ASCI >32 and <136
+        if (c < 32 || c > 126 || iupac.find(c) == std::string::npos) {
+            std::cerr << "Invalid character '" << c << "' (ASCII " << static_cast<int>(c)
+                      << ") at position " << i + 1 << " in sequence: " << line
+                      << " — replaced by '-'" << std::endl;
+            good_line.append("-");
+        }else { 
             good_line.push_back(line[i]); 
 
         } 
