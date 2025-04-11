@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classverification__HK.html" title="Class for handling generic verifications on biological sequence files (FASTA/FASTQ)." alt="" coords="5,31,127,56"/>
+<area shape="rect" id="Node000001" href="$classverification__FASTA.html" title="Subclass for performing checks and parsing specific to FASTA files. Inherits common verification tool..." alt="" coords="175,5,317,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="140,30,175,25,176,31,141,36"/>
+<area shape="rect" id="Node000002" href="$classverification__FASTQ.html" title="Subclass for performing checks and parsing specific to FASTQ files. Inherits common verification tool..." alt="" coords="175,55,317,80"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="141,51,175,55,174,60,140,56"/>
+</map>

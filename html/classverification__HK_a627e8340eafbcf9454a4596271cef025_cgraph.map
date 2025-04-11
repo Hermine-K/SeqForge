@@ -1,0 +1,11 @@
+<map id="verification_HK::all_verifications_know_file" name="verification_HK::all_verifications_know_file">
+<area shape="rect" id="Node000001" title="Performs file verification when the file name is already known." alt="" coords="5,101,184,141"/>
+<area shape="rect" id="Node000002" href="$classverification__HK.html#a3ae07291855cfaf301249d00ff4b7e08" title="Checks if the given file path exists." alt="" coords="243,5,411,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,99,231,55,250,47,252,52,233,60,137,104"/>
+<area shape="rect" id="Node000003" href="$classverification__HK.html#af5bbdececbdc9eb9e82674b4f3c926cb" title="Checks if the file has a valid FASTA or FASTQ extension." alt="" coords="232,69,423,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,106,218,102,219,107,185,112"/>
+<area shape="rect" id="Node000004" href="$classverification__HK.html#adb4d7dfa5b14f94f4b0ffabaf2750a43" title="Checks if a file is empty." alt="" coords="246,133,409,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="185,131,233,138,232,143,184,136"/>
+<area shape="rect" id="Node000005" href="$classverification__HK.html#a219d94b2bd89d2963975d46651c227f2" title="Ensures the fasta_files directory exists, or creates it." alt="" coords="246,197,409,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="137,139,233,183,252,190,250,195,231,188,135,144"/>
+</map>

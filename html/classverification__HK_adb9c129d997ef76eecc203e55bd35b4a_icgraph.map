@@ -1,0 +1,7 @@
+<map id="verification_HK::validate_sequence" name="verification_HK::validate_sequence">
+<area shape="rect" id="Node000001" title="Checks and validates a sequence string according to IUPAC codes." alt="" coords="196,37,379,77"/>
+<area shape="rect" id="Node000002" href="$classverification__FASTA.html#ada9e4baa3e50c366e3088432d0e95067" title="Reads and parses a FASTA file. Extracts headers and sequences, storing them in the inherited vectors." alt="" coords="6,5,147,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,44,147,39,148,33,183,39"/>
+<area shape="rect" id="Node000003" href="$classverification__FASTQ.html#a54a3f106f309e2ba791611fe6fa5f136" title="Reads and parses a FASTQ file. Extracts headers, sequences, and quality scores, storing them in the i..." alt="" coords="5,69,148,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,76,149,81,148,76,182,71"/>
+</map>

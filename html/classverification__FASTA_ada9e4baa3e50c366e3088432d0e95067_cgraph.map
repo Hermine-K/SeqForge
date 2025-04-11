@@ -1,0 +1,9 @@
+<map id="verification_FASTA::read_fasta" name="verification_FASTA::read_fasta">
+<area shape="rect" id="Node000001" title="Reads and parses a FASTA file. Extracts headers and sequences, storing them in the inherited vectors." alt="" coords="5,69,147,109"/>
+<area shape="rect" id="Node000002" href="$classverification__HK.html#ad902a7df762ab0262545104c03d9b3f8" title="Adds a header line to the internal vector." alt="" coords="211,5,361,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,67,206,47,208,52,143,72"/>
+<area shape="rect" id="Node000003" href="$classverification__HK.html#a6c19fb27ed555d00e57945fe89fb68fe" title="Adds a sequence to the internal vector." alt="" coords="211,69,361,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,87,198,87,198,92,147,92"/>
+<area shape="rect" id="Node000004" href="$classverification__HK.html#adb9c129d997ef76eecc203e55bd35b4a" title="Checks and validates a sequence string according to IUPAC codes." alt="" coords="195,133,377,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="143,107,208,127,206,132,142,112"/>
+</map>
