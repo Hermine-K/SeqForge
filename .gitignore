@@ -1,0 +1,19 @@
+# Build output
+build/
+*.o
+seqforge
+
+# Doxygen output (generated, should not be committed)
+html/
+latex/
+
+# Runtime data folder
+fasta_files/
+
+# OS / editor noise
+.DS_Store
+*.swp
+.Rhistory
+
+# MkDocs build output
+site/

@@ -1,0 +1,52 @@
+site_name: SeqForge
+site_description: A C++ toolkit for FASTA/FASTQ validation, analysis, two-bit encoding, k-mer indexing and read mapping.
+site_author: Hermine Kiossou
+repo_url: https://github.com/Hermine-K/SeqForge
+repo_name: Hermine-K/SeqForge
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - Read mapping: mapping.md
+  - Two-bit encoding: encoding.md
+  - How it works: design.md
+  - About: about.md

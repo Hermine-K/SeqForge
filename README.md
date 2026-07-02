@@ -1,5 +1,8 @@
 # SeqForge
 
+[![Documentation](https://img.shields.io/badge/docs-seqforge.readthedocs.io-674EA7?style=for-the-badge&logo=readthedocs&logoColor=white)](https://seqforge.readthedocs.io)
+
+
 ![CI](https://github.com/Hermine-K/SeqForge/actions/workflows/ci.yml/badge.svg)
 ![C++](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
