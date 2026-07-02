@@ -1,7 +1,0 @@
-<map id="verification_HK::set_heads" name="verification_HK::set_heads">
-<area shape="rect" id="Node000001" title="Adds a header line to the internal vector." alt="" coords="196,37,345,77"/>
-<area shape="rect" id="Node000002" href="$classverification__FASTA.html#ada9e4baa3e50c366e3088432d0e95067" title="Reads and parses a FASTA file. Extracts headers and sequences, storing them in the inherited vectors." alt="" coords="6,5,147,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,45,147,40,148,34,183,40"/>
-<area shape="rect" id="Node000003" href="$classverification__FASTQ.html#a54a3f106f309e2ba791611fe6fa5f136" title="Reads and parses a FASTQ file. Extracts headers, sequences, and quality scores, storing them in the i..." alt="" coords="5,69,148,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,74,149,80,148,75,182,69"/>
-</map>

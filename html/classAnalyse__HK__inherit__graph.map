@@ -1,7 +1,0 @@
-<map id="Analyse_HK" name="Analyse_HK">
-<area shape="rect" id="Node000001" title=" " alt="" coords="71,5,221,191"/>
-<area shape="rect" id="Node000002" href="$classAnalyse__FASTA.html" title=" " alt="" coords="5,239,135,304"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,205,86,240,82,237,97,202"/>
-<area shape="rect" id="Node000003" href="$classAnalyse__FASTQ.html" title=" " alt="" coords="159,239,288,304"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,202,211,237,207,240,191,205"/>
-</map>

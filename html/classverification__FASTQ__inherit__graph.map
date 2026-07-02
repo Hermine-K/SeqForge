@@ -1,5 +1,0 @@
-<map id="verification_FASTQ" name="verification_FASTQ">
-<area shape="rect" id="Node000001" title="Subclass for performing checks and parsing specific to FASTQ files. Inherits common verification tool..." alt="" coords="5,79,148,104"/>
-<area shape="rect" id="Node000002" href="$classverification__HK.html" title="Class for handling generic verifications on biological sequence files (FASTA/FASTQ)." alt="" coords="16,5,137,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,44,79,79,74,79,74,44"/>
-</map>

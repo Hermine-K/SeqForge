@@ -1,7 +1,0 @@
-<map id="verification_HK::fasta_empty" name="verification_HK::fasta_empty">
-<area shape="rect" id="Node000001" title="Checks if a file is empty." alt="" coords="232,37,395,77"/>
-<area shape="rect" id="Node000002" href="$classverification__HK.html#ac76afb93a4fa0560a679c02306ea13c5" title="Performs a full verification loop to get a valid FASTA file from the user." alt="" coords="22,5,167,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,46,167,39,168,33,219,41"/>
-<area shape="rect" id="Node000003" href="$classverification__HK.html#a627e8340eafbcf9454a4596271cef025" title="Performs file verification when the file name is already known." alt="" coords="5,69,184,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,74,185,79,184,74,218,69"/>
-</map>
